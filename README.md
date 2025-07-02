@@ -1,11 +1,15 @@
 # Warthunder Replay Decoder
 
-Thanks to
+![decode_example](decode_example.png)
+
+### Thanks to
 
 - Yay5379/wt_client_replay_parser
 - nilshellerhoff/warthunder-replay-parser
 - klensy/wt-tools
 - kotiq/wt-tools
+
+---
 
 ## Description
 
@@ -23,6 +27,8 @@ Not so much functionality for now
 
 ### 2download_replay
 
+args : 1 hex code
+
 currently exact copy of nilshellerhoff/warthunder-replay-parser/download_replay.py
 
 ### 3wrpl2decode
@@ -30,11 +36,14 @@ currently exact copy of nilshellerhoff/warthunder-replay-parser/download_replay.
 args : 1 server replay directory
 
 Output1 : Decoded Raw Hex Strings, split by each block
+
 Output2 : Filtered out information
 
 Core Struct structure from Yay5379/wt_client_replay_parser and wt-tools
 
+---
+
 ## TODO
 
 1. combine 1replay_list and 2download_replay
-2. Better #Filtering(pass2)
+2. Better #Filtering(pass2) in 3wrpldecode

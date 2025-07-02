@@ -68,29 +68,30 @@ def check_replay(latest: int, lst: list) -> bool:
 if __name__ == "__main__":
     data = {}
     replay_list = []
-    with open('config.json', 'r+') as file:
-        data = json.load(file)
 
-    latest = latest_replay(data)
+    #with open('replays.json', 'r+') as file:
+    #    data = json.load(file)
+
+    #latest = latest_replay(data)
     
 
     page_no = 1
     lst = []
     replay_found = False
     
-    #lst = list_replay(page_no)
+    lst = list_replay(page_no)
     #lst, replay_found = check_replay(latest, lst)
     
-    while not replay_found or len(lst) == 0:
-        replay_found += lst
-        lst = list_replay(page_no)
-        lst, replay_found = check_replay(latest, lst)
-        page_no += 1
+    #while not replay_found or len(lst) == 0:
+    #    replay_found += lst
+    #    lst = list_replay(page_no)
+    #    lst, replay_found = check_replay(latest, lst)
+    #    page_no += 1
     
     # compare 1) sessionIdHex, 2) Date 
-    print(lst)
+    #print(lst)
 
 
     ##[0]{sessionIdHex, statisticGroup, clanBattle, gameMode, title, startTime, endTime, players >  team_1 > [0] > {userId, name}
-    with open('config.json', 'r+') as file:
+    with open('replays.json', 'a+') as file:
         json.dump(lst, file)
